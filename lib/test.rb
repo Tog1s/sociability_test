@@ -5,26 +5,25 @@ class Test
     @answers = 0
 
     file = File.new("./data/questions.txt","r:UTF-8")
-    lines = file.readlines
-    @questions = lines
-    file.close
-
+    @questions = file.readlines(chomp: true)
   end
 
   def next_question
     #Цикл вопросов
+    correct_answers = %w[1 2 3]
+
     for question in @questions do
       puts question
       user_input = nil
 
-      until user_input == "1" || user_input == "2" || user_input == "3"
+      until correct_answers.include?(user_input)
         puts "Введите: 1 - Да,  2 - Нет,  3 - Иногда."
-        user_input  = STDIN.gets.chomp.downcase
+        user_input  = STDIN.gets.chomp
       end
 
-      if user_input == "1"
+      if user_input == '1'
         @answers += 2
-      elsif user_input == "3"
+      elsif user_input == '3'
         @answers += 1
       else
         @answers += 0
@@ -33,6 +32,6 @@ class Test
   end
 
   def answers
-    return @answers
+    @answers
   end
 end

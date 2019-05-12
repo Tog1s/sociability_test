@@ -6,7 +6,7 @@
 
 http://www.syntone-spb.ru/library/article_syntone/content/4969.html
 
-Реализована на Ruby 2.5
+Реализован на Ruby 2.5
 
 Для запуска вам понадобится интерпретатор Ruby.
 

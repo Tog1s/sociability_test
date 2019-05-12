@@ -5,10 +5,7 @@ class ResultPrinter
     @results = []
 
     file = File.new("./data/results.txt","r:UTF-8")
-    lines = file.readlines
-    @results = lines
-    file.close
-
+    @results = file.readlines(chomp: true)
   end
 
   def print_result(test)
