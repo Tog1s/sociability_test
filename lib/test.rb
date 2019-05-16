@@ -1,11 +1,11 @@
 class Test
+  attr_reader :answers
+
   def initialize
     # Вопросы
     @questions = []
     @answers = 0
-
-    file = File.new("./data/questions.txt","r:UTF-8")
-    @questions = file.readlines(chomp: true)
+    @questions = File.readlines("./data/questions.txt", chomp: true)
   end
 
   def next_question
@@ -29,9 +29,5 @@ class Test
         @answers += 0
       end
     end
-  end
-
-  def answers
-    @answers
   end
 end
