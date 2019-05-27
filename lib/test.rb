@@ -3,7 +3,6 @@ class Test
 
   def initialize
     # Вопросы
-    @questions = []
     @answers = 0
     @questions = File.readlines("./data/questions.txt", chomp: true)
   end

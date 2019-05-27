@@ -1,7 +1,6 @@
 class ResultPrinter
   def initialize
     # Результаты теста
-    @results = []
     @results = File.readlines("./data/results.txt", chomp: true)
   end
 
